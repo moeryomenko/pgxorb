@@ -1,0 +1,110 @@
+version: "2"
+run:
+  concurrency: 4
+  go: "1.24"
+  issues-exit-code: 1
+  tests: true
+  allow-parallel-runners: false
+linters:
+  enable:
+    - gocritic
+    - gocyclo
+  disable:
+    - asciicheck
+    - bodyclose
+    - contextcheck
+    - cyclop
+    - depguard
+    - dogsled
+    - dupl
+    - durationcheck
+    - err113
+    - errname
+    - errorlint
+    - exhaustive
+    - forbidigo
+    - forcetypeassert
+    - funlen
+    - gochecknoglobals
+    - gochecknoinits
+    - gocognit
+    - goconst
+    - godot
+    - godox
+    - goheader
+    - gomoddirectives
+    - gomodguard
+    - goprintffuncname
+    - gosec
+    - importas
+    - ireturn
+    - lll
+    - makezero
+    - misspell
+    - mnd
+    - nakedret
+    - nestif
+    - nilerr
+    - nilnil
+    - nlreturn
+    - noctx
+    - nolintlint
+    - paralleltest
+    - prealloc
+    - predeclared
+    - promlinter
+    - revive
+    - rowserrcheck
+    - sqlclosecheck
+    - tagliatelle
+    - testpackage
+    - thelper
+    - tparallel
+    - unconvert
+    - unparam
+    - varnamelen
+    - wastedassign
+    - whitespace
+    - wrapcheck
+    - wsl
+  settings:
+    gocritic:
+      disabled-checks:
+        - hugeParam
+        - typeDefFirst
+      enabled-tags:
+        - diagnostic
+        - experimental
+        - opinionated
+        - performance
+        - style
+    gocyclo:
+      min-complexity: 10
+  exclusions:
+    generated: lax
+    presets:
+      - comments
+      - common-false-positives
+      - legacy
+      - std-error-handling
+    rules:
+      - linters:
+          - gocyclo
+        path: _test\.go
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
+formatters:
+  enable:
+    - goimports
+  settings:
+    goimports:
+      local-prefixes:
+        - github.com/moeryomenko/squad
+  exclusions:
+    generated: lax
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
