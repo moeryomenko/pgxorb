@@ -1,6 +1,6 @@
 # pgxorb [![Go Reference](https://pkg.go.dev/badge/github.com/moeryomenko/pgxorb.svg)](https://pkg.go.dev/github.com/moeryomenko/pgxorb)
 
-Package pgxorb provides [PostGIS](https://postgis.net/) and [`github.com/jackc/pgx/v5`](https://pkg.go.dev/github.com/jackc/pgx/v5) via [`github.com/paulmach/orb.`](https://pkg.go.dev/github.com/paulmach/orb.).
+Package pgxorb provides [PostGIS](https://postgis.net/) support for [`github.com/jackc/pgx/v5`](https://pkg.go.dev/github.com/jackc/pgx/v5) via [`github.com/paulmach/orb.`](https://pkg.go.dev/github.com/paulmach/orb.).
 
 ## Usage
 
